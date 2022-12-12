@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://helm.nginx.com/stable
     chart: ingress-nginx
-    targetRevision: HEAD
+    targetRevision: 0.4.1
     helm:
       releaseName: ingress-nginx
   destination:
