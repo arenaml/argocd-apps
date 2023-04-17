@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prometheus
+  name: kube-prometheus-stack
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -12,12 +12,13 @@ spec:
     chart: kube-prometheus-stack
     targetRevision: "*"
     helm:
-      releaseName: prometheus
+      releaseName: kube-prometheus-stack
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
   syncPolicy:
     syncOptions:
+      - ServerSideApply=true
       - CreateNamespace=true
     automated:
       selfHeal: true
