@@ -1,22 +1,22 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: arena-landing-page
-  namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
-spec:
-  project: default
-  source:
-    repoURL: git@github.com:arenaml/arena-argocd-apps
-    targetRevision: HEAD
-    path: apps/arena-landing-page
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: arena-landing-page
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
-    automated:
-      selfHeal: true
-      prune: true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: arena-landing-page
+#   namespace: argocd
+#   finalizers:
+#   - resources-finalizer.argocd.argoproj.io
+# spec:
+#   project: default
+#   source:
+#     repoURL: git@github.com:arenaml/arena-argocd-apps
+#     targetRevision: HEAD
+#     path: apps/arena-landing-page
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: arena-landing-page
+#   syncPolicy:
+#     syncOptions:
+#       - CreateNamespace=true
+#     automated:
+#       selfHeal: true
+#       prune: true
