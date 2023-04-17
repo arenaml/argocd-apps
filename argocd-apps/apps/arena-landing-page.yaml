@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: arena-landing-page
   namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
