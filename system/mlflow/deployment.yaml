@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mlflow
+  name: mlflow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlflow
+  template:
+    metadata:
+      labels:
+        app: mlflow
+    spec:
+      containers:
+        - image: ghcr.io/mlflow/mlflow
+          name: mlflow
+          ports:
+            - containerPort: 5000
+          resources: {}
+          command:
+            - /bin/sh
+            - -c
+            - "mlflow server --backend-store-uri ${DB_URI:-./mlruns} --artifacts-destination ${S3_BUCKET_URI:-./mlruns} --host 0.0.0.0 --port 5000"
+          # env:
+          #   - name: DB_URI
+          #     value: val
+          #   - name: S3_BUCKET_URI
+          #     value: val
