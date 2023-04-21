@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: strimzi-kafka-operator
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://strimzi.io/charts/
+    chart: strimzi-kafka-operator
+    targetRevision: "*"
+    helm:
+      releaseName: strimzi-kafka-operator
+      parameters:
+        - name: featureGates
+          value: "+UseKRaft,+UseStrimziPodSets"
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: seldon-mesh
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
