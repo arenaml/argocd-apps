@@ -13,6 +13,9 @@ spec:
     targetRevision: "*"
     helm:
       releaseName: loki-stack
+      parameters:
+        - name: loki.isDefault
+          value: "false"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
