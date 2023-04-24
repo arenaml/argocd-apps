@@ -1,0 +1,18 @@
+dependencies:
+- name: seldon-core-v2-crds
+  repository: file://subcharts/seldon-core-v2-crds
+  version: 0.1.0
+- name: seldon-core-v2-kafka
+  repository: file://subcharts/seldon-core-v2-kafka
+  version: 0.1.0
+- name: seldon-core-v2-servers
+  repository: https://seldonio.github.io/helm-charts
+  version: 0.4.0
+- name: seldon-core-v2-setup
+  repository: https://seldonio.github.io/helm-charts
+  version: 0.4.0
+- name: strimzi-kafka-operator
+  repository: https://strimzi.io/charts/
+  version: 0.34.0
+digest: sha256:f1c0ef6576471205fb6a53ada575c5b2cdc06383a5fffbd8f659eb01fcea6703
+generated: "2023-04-24T17:09:41.940031283+01:00"

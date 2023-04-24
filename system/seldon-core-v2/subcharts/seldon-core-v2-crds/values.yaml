@@ -1,0 +1,18 @@
+# Default values for seldon-core-v2-crds.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+model:
+  enabled: true
+
+server:
+  enabled: true
+
+serverConfig:
+  enabled: true
+
+experiment:
+  enabled: true
+
+pipeline:
+  enabled: true
