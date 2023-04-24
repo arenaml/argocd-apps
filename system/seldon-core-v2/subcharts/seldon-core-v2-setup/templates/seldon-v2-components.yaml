@@ -609,7 +609,7 @@ spec:
       serviceAccountName: seldon-controller-manager
       terminationGracePeriodSeconds: 10
 ---
-{{- if .Values.seldon-core-v2-setup.piplines }}
+{{- if .Values.piplines }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
