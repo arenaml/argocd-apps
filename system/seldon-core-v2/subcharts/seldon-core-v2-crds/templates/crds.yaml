@@ -17806,3 +17806,4 @@ spec:
           specReplicasPath: .spec.replicas
           statusReplicasPath: .status.replicas
         status: {}
+{{- end }}
