@@ -24,8 +24,10 @@ seldon-core-v2-servers:
 
 seldon-core-v2-setup:
   enabled: true
-  kafka: false
-  pipelines: false
+  kafka:
+    enabled: false
+  pipelines:
+    enabled: false
 
 seldon-core-v2-kafka:
   enabled: false
