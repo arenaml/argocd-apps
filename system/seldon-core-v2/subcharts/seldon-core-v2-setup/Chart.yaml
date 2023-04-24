@@ -1,5 +1,5 @@
 apiVersion: v2
-name: seldon-core
+name: seldon-core-v2-setup
 description: A Helm chart for Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
@@ -21,30 +21,4 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "2.40.0"
-
-dependencies:
-  - name: seldon-core-v2-crds
-    repository: file://subcharts/seldon-core-v2-crds
-    version: ^0
-    condition: seldon-core-v2-crds.enabled
-
-  - name: seldon-core-v2-kafka
-    repository: file://subcharts/seldon-core-v2-kafka
-    version: ^0
-    condition: seldon-core-v2-kafka.enabled
-
-  - name: seldon-core-v2-servers
-    repository: https://seldonio.github.io/helm-charts
-    version: ^0
-    condition: seldon-core-v2-servers.enabled
-
-  - name: seldon-core-v2-setup
-    repository: file://subcharts/seldon-core-v2-setup
-    version: ^0
-    condition: seldon-core-v2-setup.enabled
-
-  - name: strimzi-kafka-operator
-    repository: https://strimzi.io/charts/
-    version: ^0
-    condition: strimzi-kafka-operator.enabled
+appVersion: "1.16.0"

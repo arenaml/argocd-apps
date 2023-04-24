@@ -13,7 +13,7 @@ seldon-core-v2-crds:
   experiment:
     enabled: true
   pipeline:
-    enabled: false
+    enabled: true
 
 seldon-core-v2-servers:
   enabled: true
@@ -24,6 +24,8 @@ seldon-core-v2-servers:
 
 seldon-core-v2-setup:
   enabled: true
+  kafka: false
+  pipelines: false
 
 seldon-core-v2-kafka:
   enabled: false
